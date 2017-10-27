@@ -1,0 +1,14 @@
+.idea/
+bin/
+node_modules/
+
+npm-debug.log
+
+cli/morphling-config.json
+
+src/data/*.yaml
+src/data/*.yml
+src/data/*.json
+
+*.tgz
+package

@@ -1,0 +1,8 @@
+{
+  "route": "/v2/store/order/1",
+  "body": {
+  },
+  "empty": true,
+  "httpCode": 200,
+  "method": "GET"
+}

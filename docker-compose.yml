@@ -1,0 +1,9 @@
+version: "2"
+services:
+  web:
+    build: .
+    environment:
+      - NODE_ENV=production
+      - NODE_PORT=${NODE_PORT}
+    ports:
+      - "${NODE_PORT}:${NODE_PORT}"

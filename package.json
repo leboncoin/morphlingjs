@@ -1,0 +1,55 @@
+{
+  "name": "morphlingjs",
+  "version": "0.1.97",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "postinstall": "NODE_PORT=1 docker-compose build",
+    "prepublish": "make build"
+  },
+  "bin": {
+    "morphling": "bin/cli/index.js"
+  },
+  "files": [
+    "bin/",
+    "Dockerfile",
+    "docker-compose.yml",
+    "README.md"
+  ],
+  "keywords": [
+    "mock",
+    "swagger",
+    "docker",
+    "CLI"
+  ],
+  "author": "Valentin Roudge <v.roudge@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "~6.24.1",
+    "babel-core": "~6.25.0",
+    "babel-plugin-transform-object-rest-spread": "~6.23.0",
+    "babel-plugin-transform-runtime": "~6.23.0",
+    "babel-preset-env": "~1.6.0",
+    "babel-watch": "~2.0.7"
+  },
+  "dependencies": {
+    "babel-runtime": "^6.26.0",
+    "chalk": "^2.1.0",
+    "cli-table2": "^0.2.0",
+    "commander": "^2.11.0",
+    "faker": "^4.1.0",
+    "form-data": "^2.3.1",
+    "get-installed-path": "^4.0.8",
+    "koa": "~2.3.0",
+    "koa-body": "^2.3.0",
+    "koa-router": "~7.2.1",
+    "lodash": "~4.17.4",
+    "lokijs": "1.5.0",
+    "node-fetch": "^1.7.3",
+    "prettyjson": "^1.2.1",
+    "prompt": "^1.0.0",
+    "shelljs": "^0.7.8",
+    "swagger-parser": "3.4.2",
+    "yamljs": "~0.3.0"
+  }
+}

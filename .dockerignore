@@ -1,0 +1,4 @@
+node_modules
+npm-debug.log
+.idea
+src/fileSources/remoteFiles/*.yml

@@ -1,0 +1,13 @@
+{
+  "route": "/v2/user/lololo",
+  "body": {
+    "hello": "world",
+    "foo": [12,123,1234],
+    "top":{
+      "kek":"lololo"
+    }
+  },
+  "empty": false,
+  "httpCode": 200,
+  "method": "GET"
+}
