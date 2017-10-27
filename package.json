@@ -10,6 +10,10 @@
   "bin": {
     "morphling": "bin/cli/index.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/leboncoin/morphlingjs"
+  },
   "files": [
     "bin/",
     "Dockerfile",
