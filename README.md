@@ -45,7 +45,7 @@ You will want to use **an override file**, which you can find two examples of in
 
 Doing a 
 
-- `morphling apply -o swagger-override-examples/demo.json` 
+- `morphling apply swagger-override-examples/demo.json -o` 
 
 and then 
 
