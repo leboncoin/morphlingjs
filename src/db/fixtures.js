@@ -47,6 +47,8 @@ export const createFixturesFromDefinitions = (db, definitions) => {
  * @returns {{}}
  */
 const generateOneFixture = (db, model) => {
+    console.log(model);
+
     const { type, modelName } = model;
 
     switch (type) {
