@@ -79,10 +79,10 @@ const addMethodsToRouter = (db, router, { route, routerMethods, pathOptions }) =
  */
 const responseGetter = (db, responses) => {
     let body;
-    const defaultSuccess = responses[200] || responses[204];
+    const defaultSuccess = responses[200] || responses[201] || responses[204];
 
     return ((ctx) => {
-        if (defaultSuccess) {
+        if (defaultSuccess && defaultSuccess.schema) {
             const objectRef = getReferencesAndCount(defaultSuccess.schema);
             const collection = findCollection(db, objectRef.object);
 
@@ -94,15 +94,24 @@ const responseGetter = (db, responses) => {
                     )
                 )
                 , objectRef.fixtureCount);
+            if (defaultSuccess.schema.type === 'array') {
+                ctx.body = body;
+            }
+            else if (defaultSuccess.schema['$ref']) {
+                ctx.body = body[0];
+            }
+            return;
+        } else if (defaultSuccess) {
+            const possibleCodes = [200, 201, 204];
+            for (const code of possibleCodes){
+                if(responses[code]){
+                    ctx.status = code;
+                    break;
+                }
+            }
+            return;
         }
-        if (defaultSuccess.schema.type === 'array') {
-            ctx.body = body;
-        }
-        else if (defaultSuccess.schema['$ref']) {
-            ctx.body = body[0];
-        } else {
-            ctx.throw('Unsupported format! Can you create an issue in Github about that?')
-        }
+        ctx.throw('Unsupported format! Can you create an issue in Github about that?')
 
     });
 
