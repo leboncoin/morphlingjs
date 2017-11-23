@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "postinstall": "NODE_PORT=1 docker-compose build",
+    "postinstall": "cross-env NODE_PORT=1 docker-compose build",
     "prepublish": "make build"
   },
   "bin": {
@@ -41,6 +41,7 @@
     "chalk": "^2.1.0",
     "cli-table2": "^0.2.0",
     "commander": "^2.11.0",
+    "cross-env": "^5.1.1",
     "faker": "^4.1.0",
     "form-data": "^2.3.1",
     "get-installed-path": "^4.0.8",

@@ -1,8 +1,8 @@
 start:
 	npm install || true
 	make build
-	NODE_PORT=8883 make docker-build
-	NODE_PORT=8883 make docker-up
+	cross-env NODE_PORT=8883 make docker-build
+	cross-env NODE_PORT=8883 make docker-up
 
 dev:
 	DEV=true ./node_modules/.bin/babel-watch src/server.js
@@ -37,4 +37,4 @@ docker-up:
 	docker-compose up
 
 docker-build:
-	NODE_PORT=${NODE_PORT} docker-compose build
+	cross-env NODE_PORT=${NODE_PORT} docker-compose build

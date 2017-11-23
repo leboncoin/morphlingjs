@@ -36,9 +36,9 @@ program
     const installedPath = await getInstalledPath('morphlingjs');
 
     if (!verbose) {
-        shell.exec(`cd ${installedPath} && NODE_PORT=${port} docker-compose stop > /dev/null 2>&1`);
+        shell.exec(`cd ${installedPath} && cross-env NODE_PORT=${port} docker-compose stop > /dev/null 2>&1`);
     } else {
-        shell.exec(`cd ${installedPath} && NODE_PORT=${port} docker-compose stop`)
+        shell.exec(`cd ${installedPath} && cross-env NODE_PORT=${port} docker-compose stop`)
     }
 
     console.log(chalk.green(`Morphling instance was killed 🖖`));
