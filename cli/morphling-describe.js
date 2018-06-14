@@ -4,7 +4,7 @@ import _ from 'lodash';
 import program from 'commander';
 import chalk from 'chalk';
 import fetch from 'node-fetch'
-import Table from 'cli-table2';
+import Table from 'cli-table3';
 
 import * as utilFunctions from './utils/util'
 import * as util from 'util'
