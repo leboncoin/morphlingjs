@@ -52,7 +52,7 @@
     "node-fetch": "^1.7.3",
     "prettyjson": "^1.2.1",
     "prompt": "^1.0.0",
-    "shelljs": "^0.7.8",
+    "shelljs": "^0.8.5",
     "swagger-parser": "3.4.2",
     "yamljs": "~0.3.0"
   }
